@@ -1,5 +1,6 @@
 import { ScrollViewStyleReset } from 'expo-router/html';
 import { type PropsWithChildren } from 'react';
+import { Platform, StyleSheet } from 'react-native';
 
 /**
  * This file is web-only and used to configure the root HTML for every web page during static rendering.
@@ -17,7 +18,7 @@ export default function Root({ children }: PropsWithChildren) {
           Disable body scrolling on web. This makes ScrollView components work closer to how they do on native.
           However, body scrolling is often nice to have for mobile web. If you want to enable it, remove this line.
         */}
-        <ScrollViewStyleReset />
+          <ScrollViewStyleReset />
 
         {/* Using raw CSS styles as an escape-hatch to ensure the background color never flickers in dark-mode. */}
         <style dangerouslySetInnerHTML={{ __html: responsiveBackground }} />
@@ -37,3 +38,12 @@ body {
     background-color: #000;
   }
 }`;
+
+
+const style = StyleSheet.create({
+  droidSafeArea: {
+    flex: 1,
+    backgroundColor: 'npLBlue',
+    paddingTop: Platform.OS === 'android' ? 25 : 0
+  },
+});

@@ -8,7 +8,7 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/sitelogo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,7 +19,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.medical_rep",
+      "permissions": [
+        "android.permission.INTERNET"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +35,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "0dfcc335-80f2-4e88-b6e3-c09fe822cf2f"
+      }
     }
   }
 }
